@@ -2,7 +2,6 @@ import React from "react";
 import QuoraBox from "./QuoraBox";
 import "./css/Feed.css";
 import Post from "./Post";
-import axios from "axios";
 
 function Feed({ setIsFeedUpdated, toggleFeedUpdated, posts }) {
   
