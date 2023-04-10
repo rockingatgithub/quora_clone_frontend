@@ -11,7 +11,7 @@ function Quora() {
   const [toggleFeedUpdated, setIsFeedUpdated] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/questions")
+    fetch("https://bronze-coyote-yoke.cyclic.app/api/questions")
       .then((res) => res.json())
       .then((res) => {
         setPosts(res)

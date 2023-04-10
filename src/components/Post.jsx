@@ -52,7 +52,7 @@ function Post({ post, setIsFeedUpdated, toggleFeedUpdated }) {
         user: user,
       };
       await axios
-        .post("http://localhost:8000/api/answers", body, config)
+        .post("https://bronze-coyote-yoke.cyclic.app/api/answers", body, config)
         .then((res) => {
           alert("Answer added succesfully");
           setIsModalOpen(false);

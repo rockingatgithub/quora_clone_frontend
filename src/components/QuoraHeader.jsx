@@ -41,7 +41,7 @@ function QuoraHeader({toggleFeedUpdated, setIsFeedUpdated }) {
         user: user,
       };
       await axios
-        .post("http://localhost:8000/api/questions", body, config)
+        .post("https://bronze-coyote-yoke.cyclic.app/api/questions", body, config)
         .then((res) => {
           console.log(res.data);
           alert(res.data.message);
