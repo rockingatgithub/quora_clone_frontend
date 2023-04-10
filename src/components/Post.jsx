@@ -27,7 +27,7 @@ function LastSeen({ date }) {
     </div>
   );
 }
-function Post({ post }) {
+function Post({ post, setIsFeedUpdated, toggleFeedUpdated }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [answer, setAnswer] = useState("");
   const Close = <CloseIcon />;
@@ -54,9 +54,9 @@ function Post({ post }) {
       await axios
         .post("http://localhost:8000/api/answers", body, config)
         .then((res) => {
-          console.log(res.data);
           alert("Answer added succesfully");
           setIsModalOpen(false);
+          setIsFeedUpdated(!toggleFeedUpdated)
         })
         .catch((e) => {
           console.log(e);

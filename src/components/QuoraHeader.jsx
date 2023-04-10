@@ -20,7 +20,7 @@ import { signOut } from "firebase/auth";
 import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-function QuoraHeader() {
+function QuoraHeader({toggleFeedUpdated, setIsFeedUpdated }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
   const [question, setQuestion] = useState("");
@@ -45,6 +45,8 @@ function QuoraHeader() {
         .then((res) => {
           console.log(res.data);
           alert(res.data.message);
+          setIsModalOpen(false)
+          setIsFeedUpdated(!toggleFeedUpdated)
         })
         .catch((e) => {
           console.log(e);
